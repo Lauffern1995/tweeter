@@ -1,0 +1,44 @@
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2em;
+  align-self: stretch;
+ 
+
+}
+  
+.top {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 5px solid #5f5c53;
+} 
+
+
+.bottom {
+  font-family: "Bungee";
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+}
+
+
+.text-area {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  height: 2em;
+  padding-top: 10px;
+}
+
+button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+
+
