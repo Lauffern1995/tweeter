@@ -31,7 +31,11 @@ body {
  
   align-self: center;
   width: 90%;
-  background-color: #f4f1ec;
+  background-color:  #f4f1ec;
   
 
+ }
+
+ main {
+   border: 1px solid red;
  }
