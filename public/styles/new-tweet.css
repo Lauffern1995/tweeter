@@ -7,7 +7,6 @@
   margin-top: 2em;
   align-self: stretch;
  
-
 }
   
 .top {
@@ -35,9 +34,18 @@
   padding-top: 10px;
 }
 
+.tweet-head {
+  font-size: 25px;
+  font-weight: 400;
+}
+
 button {
   background-color: #4056A1;
   color: #FFFFFF;
+}
+
+.red {
+  color: red;
 }
 
 
