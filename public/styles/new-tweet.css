@@ -29,6 +29,7 @@
 .text-area {
   border: none;
   outline: none;
+  resize: none;
   background-color: inherit;
   height: 2em;
   padding-top: 10px;

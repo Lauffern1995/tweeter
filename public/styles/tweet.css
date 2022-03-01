@@ -10,15 +10,61 @@ article.tweet {
   display: flex;
   flex-direction: column;
   border: 3px solid #5f5c53;
-  padding: 0.5em;
-  margin: 10px;
+  padding: 0.3em;
+  margin: 0.3em;
+  box-shadow: 2px 3.5px #888888;
+  
 }
 
 article.tweet > header {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
   align-items: center;
-  align-content: center;
-  height: 3em;
-  background-color: inherit;
-  background-image: none;
+  height: 2em;
+  padding: 0.5em;
+
+}
+.username {
+  opacity: 0.5;
+}
+
+article.tweet > div {
+  height: 4em;
+  padding-top: 10px;
+  width: 100%;
+  padding-left: 0.5em;
+}
+
+
+article.tweet > footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  height: 2em;
+  border-top: 5px solid #5f5f5f;
+
+}
+
+article.tweet > footer > p {
+  padding: 10px;
+  font-size: small;
+}
+
+.bulb > i { 
+  font-size: 24px;
+
+}
+
+.icons > i { 
+  color: #4056a1;
+  font-size: 20px
+
+}
+
+.icons > i:hover { 
+  color: orange;
+
 }
