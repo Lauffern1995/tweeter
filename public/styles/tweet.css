@@ -30,10 +30,12 @@ article.tweet > header {
   align-items: center;
   height: 2em;
   padding: 0.5em;
-
 }
+
 .username {
+
   opacity: 0.5;
+
 }
 
 article.tweet > div {
@@ -62,7 +64,7 @@ article.tweet > footer > p {
 
 .bulb  { 
 
- max-height:20px;
+ max-height:25px;
 
 }
 

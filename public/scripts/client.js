@@ -5,42 +5,16 @@
  */
 
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "NOAH",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461213959068
-  }
-]
-  
 
+//function to loop through array of objects and envoke create tweets
+const renderTweets = function(tweets) {
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+  for (let tweet of tweets){
+    $('.dummy-tweets').prepend(createTweetElement(tweet));
+  }
+}
 // creates tweets based on CSS styling 
 
   const createTweetElement = function(tweet) {
@@ -61,18 +35,48 @@ const data = [
 
 
 
-//function to loop through array of objects and envoke create tweets
-const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  for (let tweet of tweets){
-    $('.dummy-tweets').prepend(createTweetElement(tweet));
-  }
-}
 
 $(document).ready(function() {
 
-renderTweets(data);
 
+  //created custom post request based on serialized form submission
+  const $form =  $(".tweetSubmit")
+  $form.submit(function( event ) {
+    event.preventDefault();//stops post from happening 
+    let text = $( this ).serialize();
+    
+    
+    $.ajax({
+      method: "POST",
+      url: '/tweets',
+      data: text
+    }).catch(err => {
+      console.log('err', err)
+    })
+ 
+  });
+
+
+
+const loadTweets = function() {
+
+  $.ajax({ 
+    method: "GET",
+    url: '/tweets',
+    dataType: 'JSON' })
+    .then(res => { 
+    renderTweets(res) 
+  })
+    .catch(err => {
+    console.log('err', err)
+  })
+
+}
+
+
+
+loadTweets();
+
+  
 });
+
