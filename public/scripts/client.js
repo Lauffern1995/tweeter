@@ -31,52 +31,67 @@ const renderTweets = function(tweets) {
       <p class="icons"><i class="fa-solid fa-font-awesome"></i> <i class="fa-solid fa-retweet"></i> <i class="fa-solid fa-heart"></i></i></p>
     </footer> `)
     return $tweet;
-}
-
-
-
-
-$(document).ready(function() {
-
-
-  //created custom post request based on serialized form submission
-  const $form =  $(".tweetSubmit")
-  $form.submit(function( event ) {
-    event.preventDefault();//stops post from happening 
-    let text = $( this ).serialize();
-    
-    
-    $.ajax({
-      method: "POST",
-      url: '/tweets',
-      data: text
-    }).catch(err => {
-      console.log('err', err)
-    })
- 
-  });
-
-
-
-const loadTweets = function() {
-
-  $.ajax({ 
-    method: "GET",
-    url: '/tweets',
-    dataType: 'JSON' })
-    .then(res => { 
-    renderTweets(res) 
-  })
-    .catch(err => {
-    console.log('err', err)
-  })
-
-}
-
-
-
-loadTweets();
-
+  }
   
+  
+  const formValidation = function () {
+
+  }
+  
+  
+  $(document).ready(function() {
+    
+    const loadTweets = function() {
+    
+    
+      $.ajax({ 
+        method: "GET",
+        url: '/tweets',
+        dataType: 'JSON' })
+        .then(res => { 
+        renderTweets(res) 
+      })
+        .catch(err => {
+        console.log('err', err)
+      })
+    
+    }
+
+    const $form =  $(".tweetSubmit")
+    $form.submit(function( event ) {
+  
+      event.preventDefault();//stops post from happening 
+      let text = $( this ).serialize();
+      const input = $("textarea").val();
+      
+      if (!input){
+        alert('invalid request: Please enter some text to compose a tweet!')
+        return;
+      }
+
+      if (input.length <= 0 || input === null){
+        alert('invalid request: Please enter some text to compose a tweet!')
+        return;
+      }
+
+      if (input.length > 140){
+        alert('invalid request: 140 character limit exceeded.')
+        return;
+      }
+     
+      $.ajax({
+        method: "POST",
+        url: '/tweets',
+        data: text
+      }).catch(err => {
+        console.log('err', err)
+      })
+   
+    });
+
+
+    loadTweets();
+
+
 });
 
