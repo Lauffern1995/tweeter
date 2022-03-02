@@ -4,7 +4,11 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
-
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 //function to loop through array of objects and envoke create tweets
 const renderTweets = function(tweets) {
@@ -22,14 +26,14 @@ const renderTweets = function(tweets) {
 const createTweetElement = function(tweet) {
   let $tweet = $(` <article class="tweet">
   <header>
-  <p><img class="bulb" src="${tweet.user.avatars}" alt="icon picture"> <span class="name">${tweet.user.name}<span></p>
-  <p class="username">${tweet.user.handle}</p>
+  <p><img class="bulb" src="${escape(tweet.user.avatars)}" alt="icon picture"> <span class="name">${escape(tweet.user.name)}<span></p>
+  <p class="username">${escape(tweet.user.handle)}</p>
   </header>
   <div>
-  <p><b>${tweet.content.text}</b></p>
+  <p><b>${escape(tweet.content.text)}</b></p>
   </div>
     <footer>
-    <p>${timeago.format(tweet.created_at)}</p>
+    <p>${escape(timeago.format(tweet.created_at))}</p>
       <p class="icons"><i class="fa-solid fa-font-awesome"></i> <i class="fa-solid fa-retweet"></i> <i class="fa-solid fa-heart"></i></i></p>
       </footer> `)
     return $tweet;
