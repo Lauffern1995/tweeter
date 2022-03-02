@@ -27,38 +27,52 @@ const data = [
       "text": "Je pense , donc je suis"
     },
     "created_at": 1461113959088
+  },
+  {
+    "user": {
+      "name": "NOAH",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461213959068
   }
 ]
   
 
-  const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-
-  }
-  
 // creates tweets based on CSS styling 
+
   const createTweetElement = function(tweet) {
     let $tweet = $(` <article class="tweet">
     <header>
-    <p class="bulb"><i class="fa-solid fa-lightbulb"></i></i> ${tweetData.user.name}</p>
-    <p class="username">${tweetData.user.handle}</p>
+    <p><img class="bulb" src="${tweet.user.avatars}" alt="icon picture"> <span class="name">${tweet.user.name}<span></p>
+    <p class="username">${tweet.user.handle}</p>
     </header>
     <div>
-      <p><b>${tweetData.content.text}</b></p>
+    <p><b>${tweet.content.text}</b></p>
     </div>
     <footer>
-      <p>${timeago.format(tweetData.created_at)}</p>
+    <p>${timeago.format(tweet.created_at)}</p>
       <p class="icons"><i class="fa-solid fa-font-awesome"></i> <i class="fa-solid fa-retweet"></i> <i class="fa-solid fa-heart"></i></i></p>
     </footer> `)
     return $tweet;
 }
 
 
+
+//function to loop through array of objects and envoke create tweets
+const renderTweets = function(tweets) {
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+  for (let tweet of tweets){
+    $('.dummy-tweets').prepend(createTweetElement(tweet));
+  }
+}
+
+$(document).ready(function() {
+
 renderTweets(data);
 
-
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('.dummy-tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.;
+});

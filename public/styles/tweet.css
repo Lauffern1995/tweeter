@@ -13,6 +13,7 @@ article.tweet {
   padding: 0.3em;
   margin: 0.3em;
   
+  
 }
 
 article.tweet:hover {
@@ -59,10 +60,18 @@ article.tweet > footer > p {
   font-size: small;
 }
 
-.bulb > i { 
-  font-size: 24px;
+.bulb  { 
+
+ max-height:20px;
 
 }
+
+
+ span.name  { 
+
+  margin-left: 1px;
+
+ }
 
 .icons > i { 
   color: #4056a1;
