@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Disable Viewport Zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
@@ -37,10 +39,10 @@
       <span class="logo">tweeter </span>
       <div class="tweets">
         <span><b>Write</b> a new tweet</span>
-        <i class="fa-solid fa-angles-down"></i>
+        <i class="fa-solid fa-angles-down bounce"></i>
       </div>
     </nav>
-    <header>
+    <header class ="banner">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -53,7 +55,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        
         <form class="tweetSubmit" action="/tweets" method="POST">
           <div class='error'></div>
           <div class="top">
@@ -62,7 +64,7 @@
           </div>
           <div class="bottom">
             <button type="submit">Tweet</button>
-            <output name="counter" class=" counter " for="tweet-text">140</output>
+            <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>

@@ -3,10 +3,12 @@ body > header {
   flex-direction: column;
   height: 520px;
   width: 100%;
-  padding-top: 120px;
+  padding-top: 1em;
   align-items: center;
   justify-content: center;
   background-color: #E6F7FF;
   background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
 
 }
+
+

@@ -4,6 +4,8 @@
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
 
+
+// to protect app from script attacks
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -21,15 +23,16 @@ const renderTweets = function(tweets) {
     $('.dummy-tweets').prepend(createTweetElement(tweet));
   }
 }
-// creates tweets based on CSS styling 
 
+
+// creates tweets based on CSS styling 
 const createTweetElement = function(tweet) {
   let $tweet = $(` <article class="tweet">
   <header>
   <p><img class="bulb" src="${escape(tweet.user.avatars)}" alt="icon picture"> <span class="name">${escape(tweet.user.name)}<span></p>
   <p class="username">${escape(tweet.user.handle)}</p>
   </header>
-  <div>
+  <div class="text-container">
   <p><b>${escape(tweet.content.text)}</b></p>
   </div>
     <footer>
@@ -40,9 +43,8 @@ const createTweetElement = function(tweet) {
   }
   
   
-  
+  // ajax get request. grab json data from "database" and feed them to renderTweets
   const loadTweets = function() {
-  
   
     $.ajax({ 
       method: "GET",
@@ -50,13 +52,16 @@ const createTweetElement = function(tweet) {
       dataType: 'JSON' })
       .then(res => { 
       renderTweets(res) 
+      $('.text-area').val('');
+      $('.counter').val('140');
+
     })
       .catch(err => {
       console.log('err', err)
     })
   
   }
-
+  //form validation with error messages // parses data from textarea and uses a ajax post request to pass data to loadTweets 
   const postingTweets = function () {
 
     const $form =  $(".tweetSubmit")
@@ -67,7 +72,7 @@ const createTweetElement = function(tweet) {
       const input = $("textarea").val();
       
       if (!input){
-        $('.error').text(`⛔️ Invalid request: Please enter some text to compose a tweet! ⛔️`).slideDown().
+        $('.error').text(`⛔️ Invalid request: Please enter some text to compose a tweet! ⛔️`).slideDown();
         return;
       }
 
@@ -77,7 +82,7 @@ const createTweetElement = function(tweet) {
       }
 
       if (input.length > 140){
-        $('.error').text(`⛔️ Invalid request: 140 character limit exceeded. ⛔️`).slideDown();
+        $('.error').text(`⛔️ Invalid request: 140 character limit exceeded. ⛔️`).slideDown(400);
         return;
       }
 
@@ -88,7 +93,9 @@ const createTweetElement = function(tweet) {
         url: '/tweets',
         data: text
       }).then(data => {
+     
         loadTweets();
+      
       })
         .catch(err => {
         console.log('err', err)

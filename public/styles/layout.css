@@ -35,3 +35,76 @@ body {
   
 
  }
+
+
+ /* Tablet Styles */
+@media only screen and (min-width: 768px) {
+
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+
+
+  form {
+    padding-top: 7.5em;
+
+  }
+  .container {
+    float: right;
+    width: 50%;
+    margin-right: 4em;
+    
+  }
+
+  header.banner {
+    float: left;
+    margin-top: 10em;
+    margin-left: 4em;
+    max-height: 70vh;
+    width: 30%;
+    justify-content: center;
+
+  }
+
+  nav {
+    display: flex;
+    height: 120px;
+    width: 100%;
+    background-color: #4056A1;
+    color: #FFFFFF;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+     
+    
+  }
+   
+  
+
+}
+
+@media only screen and (max-width: 767px) {
+
+  nav {
+    display: flex;
+    height: 120px;
+    width: 100%;
+    background-color: #E6F7FF;
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 9998;
+   
+  
+  }
+
+}

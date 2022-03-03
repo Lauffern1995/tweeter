@@ -12,6 +12,7 @@ article.tweet {
   border: 3px solid #5f5c53;
   padding: 0.3em;
   margin: 0.3em;
+  max-height: 100em;
   
   
 }
@@ -38,12 +39,24 @@ article.tweet > header {
 
 }
 
-article.tweet > div {
+article.tweet > div  {
   height: 4em;
   padding-top: 10px;
   width: 100%;
   padding-left: 0.5em;
+  padding-bottom: 0.5em;
+  overflow-wrap: break-word;
+  overflow: scroll;
+  margin: auto;
+  
 }
+
+article.tweet > div::-webkit-scrollbar {
+  display: none;
+}
+
+
+
 
 
 article.tweet > footer {
@@ -53,7 +66,8 @@ article.tweet > footer {
   width: 100%;
   align-items: center;
   height: 2em;
-  border-top: 5px solid #5f5f5f;
+  border-top: 2px solid #5f5f5f;
+  margin-top: 10px;
 
 }
 
@@ -61,6 +75,8 @@ article.tweet > footer > p {
   padding: 10px;
   font-size: small;
 }
+
+
 
 .bulb  { 
 
@@ -85,3 +101,4 @@ article.tweet > footer > p {
   color: orange;
 
 }
+
