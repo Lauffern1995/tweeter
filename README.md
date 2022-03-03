@@ -5,9 +5,8 @@
 
 ## Getting Started
 
-![""]()
-![""]()
-![""]()
+!["Large res format"](https://github.com/Lauffern1995/tweeter/blob/master/docs/Tweeter-lrg-res.png?raw=true)
+!["mobile format"](https://github.com/Lauffern1995/tweeter/blob/master/docs/tweeter-mobile.png?raw=true)
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
 2. Clone your repository onto your local device.
