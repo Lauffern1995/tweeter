@@ -108,24 +108,32 @@ const createTweetElement = function(tweet) {
   }
 
 
+ //event listener for scroll // fades in a arrow that when clicked takes user to top of page  
+const scollToTop = function() {
+
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop()) {
+        $('#toTop').fadeIn();
+    } else {
+        $('#toTop').fadeOut();
+    }
+  });
+  
+  $("#toTop").click(function() {
+    $("html, body").animate({scrollTop: 0}, 1000);
+  });
+
+
+}
 
   $(document).ready(function() {
 
     loadTweets();
     postingTweets();
+    scollToTop();
     
-    $(window).scroll(function() {
-      if ($(this).scrollTop()) {
-          $('#toTop').fadeIn();
-      } else {
-          $('#toTop').fadeOut();
-      }
-    });
-    
-    $("#toTop").click(function() {
-      $("html, body").animate({scrollTop: 0}, 1000);
-    });
-
+  
       
   });
    
