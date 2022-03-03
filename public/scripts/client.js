@@ -63,20 +63,21 @@ const createTweetElement = function(tweet) {
       $form.submit(function( event ) {
     
       event.preventDefault();//stops post from happening 
+      $('.error').slideUp().text();
       const input = $("textarea").val();
       
       if (!input){
-        alert('invalid request: Please enter some text to compose a tweet!')
+        $('.error').text(`⛔️ Invalid request: Please enter some text to compose a tweet! ⛔️`).slideDown().
         return;
       }
 
       if (input.length <= 0 || input === null){
-        alert('invalid request: Please enter some text to compose a tweet!')
+        $('.error').text(`⛔️ Invalid request: Please enter some text to compose a tweet! ⛔️`).slideDown();
         return;
       }
 
       if (input.length > 140){
-        alert('invalid request: 140 character limit exceeded.')
+        $('.error').text(`⛔️ Invalid request: 140 character limit exceeded. ⛔️`).slideDown();
         return;
       }
 
