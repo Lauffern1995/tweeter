@@ -32,8 +32,20 @@
   resize: none;
   background-color: inherit;
   height: 2em;
-  padding-top: 10px;
+  
 }
+
+.text-area::placeholder {
+  font-size: 1.5em;
+  font-weight: 700;
+  font-style: italic;
+  
+}
+
+.text-area:focus::placeholder {
+  color: transparent;
+}
+
 
 .tweet-head {
   font-size: 25px;
@@ -60,7 +72,6 @@ button {
   text-align: center;
   margin-bottom: 10px;
   border-style: dashed;
-  
   
   
 }

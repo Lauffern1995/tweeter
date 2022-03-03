@@ -24,17 +24,35 @@ body {
 }
 
 /*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+* Additional CSS can be defined below or in other CSS files, as per instructions
+*/
 
- .container {
- 
+
+
+
+#toTop {
+  padding: 0.1em;
+  position: fixed;
+  bottom: 0;
+  right: 5px;
+  font-size: 4em;
+  display: none;
+}
+
+.container {
+  
   align-self: center;
   width: 90%;
   background-color:  #f4f1ec;
   
 
  }
+
+ header.banner {
+  
+  margin-top: 7em;
+ 
+}
 
 
  /* Tablet Styles */
@@ -95,8 +113,8 @@ body {
     display: flex;
     height: 120px;
     width: 100%;
-    background-color: #E6F7FF;
-    background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+    background-color: #cc9900;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
     padding-left: 1.5em;
     padding-right: 1.5em;
     justify-content: space-between;

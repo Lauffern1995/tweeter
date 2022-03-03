@@ -33,6 +33,7 @@
 
   </head>
 
+  <a name="top"></a>
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
@@ -59,8 +60,8 @@
         <form class="tweetSubmit" action="/tweets" method="POST">
           <div class='error'></div>
           <div class="top">
-            <label class="tweet-head" for="text-area">What are you humming about?</label>
-            <textarea name="text" class="text-area"></textarea>
+            <label class="tweet-head" for="text-area"></label>
+            <textarea name="text" class="text-area" placeholder="What are you humming about?"></textarea>
           </div>
           <div class="bottom">
             <button type="submit">Tweet</button>
@@ -74,5 +75,6 @@
     
       </section>
     </main>
+    <i id="toTop" class="fa-solid fa-arrow-turn-up"></i>
   </body>
 </html>

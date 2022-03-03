@@ -41,6 +41,7 @@ const createTweetElement = function(tweet) {
       </footer> `)
     return $tweet;
   }
+
   
   
   // ajax get request. grab json data from "database" and feed them to renderTweets
@@ -107,11 +108,26 @@ const createTweetElement = function(tweet) {
   }
 
 
+
   $(document).ready(function() {
 
     loadTweets();
     postingTweets();
+    
+    $(window).scroll(function() {
+      if ($(this).scrollTop()) {
+          $('#toTop').fadeIn();
+      } else {
+          $('#toTop').fadeOut();
+      }
+    });
+    
+    $("#toTop").click(function() {
+      $("html, body").animate({scrollTop: 0}, 1000);
+    });
 
+      
+  });
+   
 
-});
 

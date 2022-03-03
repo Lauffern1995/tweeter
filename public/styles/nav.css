@@ -28,10 +28,10 @@ div.tweets > i:hover {
 .bounce {
   display: inline-block;
   position: relative;
-  -moz-animation: bounce 0.5s infinite linear;
-  -o-animation: bounce 0.5s infinite linear;
-  -webkit-animation: bounce 0.5s infinite linear;
-  animation: bounce 0.5s infinite linear;
+  -moz-animation: bounce 0.7s infinite linear;
+  -o-animation: bounce 0.7s infinite linear;
+  -webkit-animation: bounce 0.7s infinite linear;
+  animation: bounce 0.7s infinite linear;
   colr:000;
 
 }
