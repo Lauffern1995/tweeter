@@ -35,12 +35,17 @@
   
 }
 
+
+
+
 .text-area::placeholder {
   font-size: 1.5em;
   font-weight: 700;
   font-style: italic;
   
 }
+
+/* sets tweet text area to empty on click */
 
 .text-area:focus::placeholder {
   color: transparent;
@@ -57,6 +62,7 @@ button {
   color: #FFFFFF;
 }
 
+/* class for setting text red after char limit */
 .red {
   color: red;
 }

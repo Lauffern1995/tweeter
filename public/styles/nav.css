@@ -25,6 +25,8 @@ div.tweets > i:hover {
   
 }
 
+/* ANIMATION WITH BROWSER COMPATIBILITY */
+
 .bounce {
   display: inline-block;
   position: relative;

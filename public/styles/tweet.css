@@ -1,3 +1,8 @@
+
+
+
+/* FOR LOADED TWEETS IN MAIN CONTAINER */
+
 .dummy-tweets {
 
   display: flex;
@@ -51,12 +56,11 @@ article.tweet > div  {
   
 }
 
+/* hiding scrollbar on chrome */
+
 article.tweet > div::-webkit-scrollbar {
   display: none;
 }
-
-
-
 
 
 article.tweet > footer {
